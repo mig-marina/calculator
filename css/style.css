@@ -118,8 +118,20 @@ h1 {
 	}
 }
 @media screen and (max-width: 800px) {
-	.calc {
-		width: 80%;
+	.calc,
+	.info {
+		width: 95%;
+	}
+	.btn-m {
+		font-size: 20px;
+	}
+	.calc-display-input {
+		padding: 10px;
+		font-size: 20px;
+		letter-spacing: 1px;
+	}
+	.wrap-calc {
+		padding: 30px 10px;
 	}
 }
 
