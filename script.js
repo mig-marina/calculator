@@ -76,13 +76,12 @@ function operationPress(op) {
 			MemoryCurrentNumber = MemoryCurrentNumber*1;
 			console.log(MemoryCurrentNumber);
 			if(MemoryCurrentNumber >= 0) {
-			console.log('ok');
 				display.value = Math.sqrt(MemoryCurrentNumber);
 				MemoryCurrentNumber = display.value;
 				MemoryCurrentNumber = MemoryCurrentNumber*1;
 			} else {display.value = 'invalid input!'; MemoryNewNumber = true;};
 			
-		} else {  
+		} else { 
 			let localOperationMemory = display.value;
 			localOperationMemory = localOperationMemory*1;
 			if (MemoryNewNumber && MemoryPendingOperation !== '=') {
@@ -96,17 +95,23 @@ function operationPress(op) {
 				} else if (MemoryPendingOperation === '*') {
 					MemoryCurrentNumber *= localOperationMemory;
 				} else if (MemoryPendingOperation === '/') {
-					if(localOperationMemory == 0) {MemoryCurrentNumber = 'infinity!'
+					if(localOperationMemory == 0) {MemoryCurrentNumber = 'infinity!'; localOperationMemory = 0;
 						} else MemoryCurrentNumber /= localOperationMemory;
 				} else if (MemoryPendingOperation === 'pow') {
 					MemoryCurrentNumber = Math.pow(MemoryCurrentNumber,localOperationMemory);
 				} else {
-					MemoryCurrentNumber = localOperationMemory;
+					if(MemoryCurrentNumber != 'infinity!') {MemoryCurrentNumber = localOperationMemory;}
 				} 
+				if(MemoryCurrentNumber != 'infinity!') {
 				MemoryCurrentNumber = MemoryCurrentNumber.toFixed(12)*1;
 				display.value = MemoryCurrentNumber; /*выводим на табло новое значение из памяти функции*/
-				//display.value = display.value.slice(0,16);
-				MemoryPendingOperation = op; /*когда мы начинаем вводить новое число, то операцию, которую будем между этими числами делать сохраням в локальную op*/
+				MemoryPendingOperation = op; /*когда мы начинаем вводить новое число, то операцию, которую будем между этими числами делать сохраням в локальную op*/} else {
+					display.value = MemoryCurrentNumber;
+					MemoryCurrentNumber = 0;
+					localOperationMemory = 0;
+					MemoryNewNumber = true;
+					MemoryPendingOperation = '';
+				}
 			}
 		}/*end else !==sqrt*/
 }/*end function operationPress*/
