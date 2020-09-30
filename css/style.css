@@ -1,0 +1,133 @@
+/*MAIN STYLES*/
+html {
+	margin: 0;
+}
+body {
+	font-size: 20px;
+	background: #eee;
+}
+.wrap {
+	width: 90%;
+	max-width: 1200px;
+	margin: 30px auto;
+}
+.clear:after {
+	content: "";
+	display: block;
+	clear: both;
+}
+.info {
+	width: 55%;
+	float: left;
+}
+.calc {
+	width: 40%;
+	float: left;
+	margin-right: 5%;
+}
+/*CALCULATOR---STYLES*/
+.wrap-calc {
+	padding: 30px 30px;
+	background-color: #686A6A;
+    border-radius: 15px;
+	box-shadow: 5px 5px 3px 1px #222;
+}
+.calc-display-input {
+	display: block;
+	margin: 0 auto;
+	padding: 20px 10px;
+	width: 90%;
+	border-radius: 8px;
+	background-color: #313131;
+	color: #FFF;
+	text-align: right;
+	font-family: 'Gruppo', cursive;
+	font-size: 40px;
+	letter-spacing: 2px;
+}
+.wrap-calc-elements {
+	padding: 20px 0;
+}
+.calc-row div {
+	width: 25%;
+	float: left;
+	text-align: center;
+	padding: 8px 0;
+}
+.btn {
+	width: 90%;
+	background-color: #F4F4F4;
+	border: 1px solid transparent;
+	box-shadow: 2px 2px 1px 1px #222;
+	font-family: 'Gruppo', cursive;
+	font-size: 24px;
+	color: #444;
+	text-transform: uppercase;
+	border-radius: 6px;
+	padding: 8px 0;
+	cursor: pointer;
+	transition: 0.1s all;
+}
+.btn-hover-red:hover {
+	border-color: red;
+	color: black;
+}
+.btn-hover-orange:hover {
+	border-color: #ff6a00;
+	color: black;
+}
+.btn-hover-green:hover {
+	border-color: green;
+	color: black;
+}
+button {
+	outline: none;
+}
+
+/*INFOBLOCK---STYLES*/
+h1 {
+	font-family: 'Gruppo', cursive;
+	text-transform: uppercase;
+	text-align: right;
+	color: #444;
+	font-size: 30px;
+	letter-spacing: 3px;
+	margin-top: 0;
+}
+.info-items {
+	font-size: 18px;
+	line-height: 1.3;
+	padding: 20px;	
+}
+.info-items li {
+	margin-bottom: 10px;
+}
+
+@media screen and (max-width: 1000px) {
+	.info,
+	.calc {
+		float: none;
+		margin: 0 auto;
+	}
+	.calc {
+		width: 50%;
+		margin-bottom: 30px;	
+	}
+	.info{
+		width: 80%;
+	}
+}
+@media screen and (max-width: 800px) {
+	.calc {
+		width: 80%;
+	}
+}
+
+
+
+
+/* .info, .calc { */
+
+	/* padding-bottom: 99999px; */
+	/* margin-bottom: -99999px; */
+/* } */

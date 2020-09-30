@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Gruppo&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/style.css">
+  <title>calculator</title>
+</head>
+
+<body>
+	<div class="wrap clear">
+		<div class="calc">
+			<div class="wrap-calc">
+				<div class="calc-display">
+					<input type="text" id="display" value="0" class="calc-display-input" disabled>
+				</div>
+				<div class="wrap-calc-elements">
+					<div class="calc-elements">
+						<div class="calc-row clear">
+							<div>
+								<button type="button" class="clear-btn btn btn-hover-red" id="ce">ce</button>
+							</div>
+							<div>
+								<button type="button" class="clear-btn btn btn-hover-red" id="c">c</button>
+							</div>
+							<div>
+								<button type="button" class="operator btn btn-hover-orange">/</button>
+							</div>
+							<div>
+								<button type="button" class=" operator btn btn-hover-orange">*</button>
+							</div>
+						</div>
+						<div class="calc-row clear">
+							<div>
+								<button type="button" class="number btn-hover-green btn">7</button>
+							</div>
+							<div>
+								<button type="button" class="number btn-hover-green btn">8</button>
+							</div>
+							<div>
+								<button type="button" class="number btn-hover-green btn">9</button>
+							</div>
+							<div>
+								<button type="button" class="operator btn btn-hover-orange">-</button>
+							</div>
+						</div>
+						<div class="calc-row clear">
+							<div>
+								<button type="button" class="number btn-hover-green btn">4</button>
+							</div>
+							<div>
+								<button type="button" class="number btn-hover-green btn">5</button>
+							</div>
+							<div>
+								<button type="button" class="number btn-hover-green btn">6</button>
+							</div>
+							<div>
+								<button type="button" class="operator btn btn-hover-orange">+</button>
+							</div>
+						</div>
+						<div class="calc-row clear">
+							<div>
+								<button type="button" class="number btn-hover-green btn">1</button>
+							</div>
+							<div>
+								<button type="button" class="number btn-hover-green btn">2</button>
+							</div>
+							<div>
+								<button type="button" class="number btn-hover-green btn">3</button>
+							</div>
+							<div>
+								<button type="button" class="operator btn btn-equal btn-hover-orange" id="result">=</button>
+							</div>
+						</div>
+						<div class="calc-row clear">
+							<div>
+								<button type="button" class="number btn-hover-green btn btn-long">0</button>
+							</div>
+							<div>
+								<button type="button" class="btn  btn-hover-orange" id="decimal">.</button>
+							</div>
+							<div>
+								<button type="button" class="btn btn-hover-orange" id="sign-change">+/-</button>
+							</div>
+						</div>
+						<div class="calc-row clear">
+							<div>
+								<button type="button" class="operator btn btn-hover-orange">sqrt</button>
+							</div>
+							<div>
+								<button type="button" class="operator btn btn-hover-orange">pow</button>
+							</div>	
+						</div><!--end calc-row-->
+					</div><!--end calc-elements-->
+				</div>
+			</div>
+		</div>
+	  
+	  <div class="info">
+		<div class="wrap-info">
+			<h1>simple calculator</h1>
+			<ul class="info-items">
+				<li>стандартные операции +, -, *, /</li>
+				<li>для извлечения квадратного корня нажимается кнопка sqrt - корень извлекается из того числа, которое отображено на дисплее калькулятора</li>
+				<li>при попытке извлечения квадратного корня из отрицательного числа появляется сообщение <strong style="color: red">'invalid input'</strong>, после этого, вычисления можно продолжать, ввод данных начнется с начала</li>
+				<li>при попытке деления на нуль появляется сообщение <strong style="color: red">'infinity'</strong>, после этого вычисления можно продолжать, ввод данных начнется с начала</li>
+				<li>для возведения в степень используется кнопка pow в следующем порядке - на дисплее отображается число, которое будем возводить в степень, нажимаем кнопку pow, затем вводим любое число, которое представляет собой степень, и либо нажимаем равно или любое другое действие из доступных - данные на дисплее заменятся новым значением (результатом возведения в степень), которое может дальше участвовать в цепочке вычислений</li>
+				<li>возведение <strong>только в целую степень и простую дробную (вида 0.5 или 0.25)</strong>, ошибка попытки ввода в отрицательную или дробную степень здесь не обрабатывается - <strong>к примеру</strong>, для вовзедения 27 в 1/3 необходимо набрать 27 - pow - 0.3333333 (16 троек после запятой)</li>
+				<li><strong>не контролируется</strong> вопрос возведения в достаточно большую степень</li>
+				<li>для смены знака используется кнопка '+/-' - она позволяет у текущего числа сменить знак на противоположный (нажимается после завершения ввода числа), применяется к текущему отображаемому на дисплее значению</li>
+			</ul>
+		</div>
+	  </div>
+	</div>  
+<script src="script.js"></script>
+</body>
+</html>
