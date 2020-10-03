@@ -48,10 +48,11 @@ signChangeBtn.addEventListener('click', signChange);
 
 function signChange() {
 	let localNumber = +display.value;
-	console.log(localNumber);
-	if(localNumber != 0) {
+	if(localNumber != 0 && !Number.isNaN(localNumber)) {
 		localNumber = localNumber*(-1);
 		display.value = localNumber;
+	} else {
+		display.value = 'invalid input!';
 	}
 }
 
@@ -74,12 +75,11 @@ function operationPress(op) {
 		if (op == 'sqrt') {
 			MemoryCurrentNumber = display.value;
 			MemoryCurrentNumber = MemoryCurrentNumber*1;
-			console.log(MemoryCurrentNumber);
 			if(MemoryCurrentNumber >= 0) {
 				display.value = Math.sqrt(MemoryCurrentNumber);
 				MemoryCurrentNumber = display.value;
 				MemoryCurrentNumber = MemoryCurrentNumber*1;
-			} else {display.value = 'invalid input!'; MemoryNewNumber = true;};
+			} else {display.value = 'invalid input!'; MemoryNewNumber = true;MemoryCurrentNumber = 0; localOperationMemory = 0;MemoryPendingOperation = '';};
 			
 		} else { 
 			let localOperationMemory = display.value;
@@ -98,11 +98,15 @@ function operationPress(op) {
 					if(localOperationMemory == 0) {MemoryCurrentNumber = 'infinity!'; localOperationMemory = 0;
 						} else MemoryCurrentNumber /= localOperationMemory;
 				} else if (MemoryPendingOperation === 'pow') {
+					console.log(MemoryCurrentNumber);
+					console.log(localOperationMemory);
+					console.log(display.value);
+					if(MemoryCurrentNumber == 'invalid input!'){MemoryCurrentNumber=0;}
 					MemoryCurrentNumber = Math.pow(MemoryCurrentNumber,localOperationMemory);
 				} else {
 					if(MemoryCurrentNumber != 'infinity!') {MemoryCurrentNumber = localOperationMemory;}
 				} 
-				if(MemoryCurrentNumber != 'infinity!') {
+				if(MemoryCurrentNumber != 'infinity!' && MemoryCurrentNumber != 'invalid input!') {
 				MemoryCurrentNumber = MemoryCurrentNumber.toFixed(12)*1;
 				display.value = MemoryCurrentNumber; /*выводим на табло новое значение из памяти функции*/
 				MemoryPendingOperation = op; /*когда мы начинаем вводить новое число, то операцию, которую будем между этими числами делать сохраням в локальную op*/} else {
