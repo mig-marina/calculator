@@ -25,6 +25,11 @@ body {
 	float: left;
 	margin-right: 5%;
 }
+.nomarker {
+	list-style-type: none;
+	font-weight: bold;
+	letter-spacing: 2px;
+}
 /*CALCULATOR---STYLES*/
 .wrap-calc {
 	padding: 30px 30px;
